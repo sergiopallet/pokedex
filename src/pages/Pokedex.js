@@ -46,12 +46,9 @@ export const Pokedex = () => {
       <PokemonList pokemons={results} />
       <Pagination
         activePage={activePage}
-        count={count}
-        rowsPerPage={ROWS_PER_PAGE}
         totalPages={totalPages}
         onNext={renderNextData}
         onPrevious={renderPreviousData}
-        setActivePage={setActivePage}
         loading={loading}
       />
     </>
