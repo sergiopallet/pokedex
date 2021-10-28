@@ -5,6 +5,20 @@ const columns = [
   { accessor: "url", label: "url" },
 ];
 
+const renderTableColumn = (row, column) => {
+  return (
+    <td key={column.accessor}>
+      {column.accessor === "url" ? (
+        <a href={row[column.accessor]} target="_blank" rel="noreferrer">
+          {row[column.accessor]}
+        </a>
+      ) : (
+        row[column.accessor]
+      )}
+    </td>
+  );
+};
+
 const Table = ({ columns, rows }) => {
   return (
     <table>
@@ -19,23 +33,7 @@ const Table = ({ columns, rows }) => {
         {rows.map((row, index) => {
           return (
             <tr key={index}>
-              {columns.map((column) => {
-                return (
-                  <td key={column.accessor}>
-                    {column.accessor === "url" ? (
-                      <a
-                        href={row[column.accessor]}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        {row[column.accessor]}
-                      </a>
-                    ) : (
-                      row[column.accessor]
-                    )}
-                  </td>
-                );
-              })}
+              {columns.map((column) => renderTableColumn(row, column))}
             </tr>
           );
         })}
