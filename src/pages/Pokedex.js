@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Pagination } from "../components/Pagination";
-import { PokemonList } from "../components/PokemonList";
+import { PokemonTable } from "../components/PokemonTable";
 
 const DEFAULT_API_DATA = {
   results: [],
@@ -43,7 +43,7 @@ export const Pokedex = () => {
   return (
     <>
       <h1> Pokedex </h1>
-      <PokemonList pokemons={results} />
+      <PokemonTable pokemons={results} />
       <Pagination
         activePage={activePage}
         totalPages={totalPages}

@@ -42,6 +42,6 @@ const Table = ({ columns, rows }) => {
   );
 };
 
-export const PokemonList = ({ pokemons }) => {
+export const PokemonTable = ({ pokemons }) => {
   return <Table rows={pokemons} columns={columns} />;
 };
