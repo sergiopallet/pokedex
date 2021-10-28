@@ -16,9 +16,9 @@ const Table = ({ columns, rows }) => {
         </tr>
       </thead>
       <tbody>
-        {rows.map((row) => {
+        {rows.map((row, index) => {
           return (
-            <tr key={row.id}>
+            <tr key={index}>
               {columns.map((column) => {
                 return (
                   <td key={column.accessor}>
